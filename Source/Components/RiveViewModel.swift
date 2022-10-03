@@ -296,11 +296,6 @@ open class RiveViewModel: NSObject, ObservableObject, RiveFileDelegate, RiveStat
         play()
     }
 
-    open func setInput(_ inputName: String, value: Bool) {
-        riveModel?.stateMachine?.getBool(inputName).setValue(value)
-        play()
-    }
-
     /// Provide the active StateMachine a `Number` input
     /// - Parameters:
     ///   - inputName: The name of a `Number` input on the active StateMachine
