@@ -38,6 +38,8 @@ import Combine
 ///    }
 /// }
 /// ```
+@objc(RiveViewModel)
+@objcMembers
 open class RiveViewModel: NSObject, ObservableObject, RiveFileDelegate, RiveStateMachineDelegate, RivePlayerDelegate {
     open private(set) var riveView: RiveView?
     private var defaultModel: RiveModelBuffer!

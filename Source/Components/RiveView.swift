@@ -8,7 +8,8 @@
 
 import Foundation
 
-
+@objc(RiveView)
+@objcMembers
 open class RiveView: RiveRendererView {
     // MARK: Configuration
     internal weak var riveModel: RiveModel!
