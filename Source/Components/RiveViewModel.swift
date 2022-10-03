@@ -295,11 +295,34 @@ open class RiveViewModel: NSObject, ObservableObject, RiveFileDelegate, RiveStat
         riveModel?.stateMachine?.getBool(inputName).setValue(value)
         play()
     }
+
+    open func setInput(_ inputName: String, value: Bool) {
+        riveModel?.stateMachine?.getBool(inputName).setValue(value)
+        play()
+    }
+
+    /// Provide the active StateMachine a `Number` input
+    /// - Parameters:
+    ///   - inputName: The name of a `Number` input on the active StateMachine
+    ///   - value: A Float value for the input
+    open func setFloatInput(_ inputName: String, value: Float) {
+        riveModel?.stateMachine?.getNumber(inputName).setValue(value)
+        play()
+    }
+    
+    /// Provide the active StateMachine a `Number` input
+    /// - Parameters:
+    ///   - inputName: The name of a `Number` input on the active StateMachine
+    ///   - value: A Double value for the input
+    open func setDoubleInput(_ inputName: String, value: Double) {
+        setInput(inputName, value: Float(value))
+    }
     
     /// Provide the active StateMachine a `Number` input
     /// - Parameters:
     ///   - inputName: The name of a `Number` input on the active StateMachine
     ///   - value: A Float value for the input
+    @nonobjc
     open func setInput(_ inputName: String, value: Float) {
         riveModel?.stateMachine?.getNumber(inputName).setValue(value)
         play()
@@ -309,6 +332,7 @@ open class RiveViewModel: NSObject, ObservableObject, RiveFileDelegate, RiveStat
     /// - Parameters:
     ///   - inputName: The name of a `Number` input on the active StateMachine
     ///   - value: A Double value for the input
+    @nonobjc
     open func setInput(_ inputName: String, value: Double) {
         setInput(inputName, value: Float(value))
     }
